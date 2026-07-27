@@ -9,14 +9,22 @@ def login_function():
     else :
         messagebox.showwarning("Input passed", "you have enterd"+user.get()+" "+password.get())
 
+def showhide_pass():
+    if showhide.get():
+         E2.config(show="")
+    else:
+        E2.config(show="*")
 
+        
 
 window=Tk()
 window.title("Login from")
 window.resizable(False,False)
 
+
 user=StringVar()
 password=StringVar()
+showhide=BooleanVar()
 
 L1=Label(window,text="Login Form",font=("Century",18,"bold"))
 L1.pack(padx=10,pady=10)
@@ -33,7 +41,9 @@ L3.pack()
 E2=Entry(window,font=("Arial",14,"normal"),show="*",textvariable=password)
 E2.pack(padx=10)
 
+c1=Checkbutton(window,text=" show / hide password",command=showhide_pass,variable=showhide)
+
 B1=Button(window,text="Login",font=("Arial",16,"bold"),pady=5,padx=20,command=login_function)
-B1.pack(Pady=20)
+B1.pack()
 
 window.mainloop()
