@@ -10,8 +10,16 @@ window.title("First GUI Application")
 window.resizable(False,False)
 username=StringVar()
 
-l1=Label(text="First GUI Application",font=("Arial",18,"bold"))
-l1.pack()
+L1=Label(text="First GUI Application",font=("Arial",18,"bold"))
+L1.pack()
 
-l2=Label(text=" Enter your name:",font=("Arial",14,"normal"))
-l2.pack()
+L2=Label(text=" Enter your name:",font=("Arial",14,"normal"))
+L2.pack()
+
+E1=Entry(font=("Arial",14,"normal"),textvariable=username)
+E1.pack()
+
+B1=Button(text="Click Here!",font=("Arial",14,"bold"))
+B1.pack()
+
+window.mainloop()
