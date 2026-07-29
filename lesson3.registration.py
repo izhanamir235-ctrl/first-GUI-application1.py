@@ -3,11 +3,29 @@ from tkinter import *
 def sumbit_data():
     pass
 
+def showhidepass1():
+    if mypass1.get():
+        E5.config(show=" ")
+    else:
+        E5.config(show="*")
+
+def showhidepass2():
+    if mypass2.get():
+        E6.config(show=" ")
+    else:
+        E6.config(show=" ")
+
+
+
+
 root=Tk()
 root.title("Student registration form")
 root.resizable(False,False)
 
 gender=StringVar()
+mypass1=BooleanVar()
+mypass2=BooleanVar()
+
 
 L1=Label(root,text="Student Registration form",font=("Claibri",20,"bold"))
 L1.grid(row=0,column=0,columnspan=2,padx=10,pady=10)
@@ -68,7 +86,10 @@ L10=Label(root,text="Type password",font=("Claibri",16,"bold"))
 L10.grid(row=12,column=0,columnspan=2)
 
 E5=Entry(root,font=("Claibri",14,"normal"),show="*")
-E5.grid(row=13,column=0,padx=10,pady=10,columnspan=2)
+E5.grid(row=13,column=0,padx=10,pady=10)
+
+cb4=Checkbutton(root,text="show/ hide password",variable=mypass1,font=("Claibri",14,"bold"),command=showhidepass1)
+cb4.grid(row=13,column=1)
 
 L11=Label(root,text="Verify password",font=("Claibri",16,"bold"))
 L11.grid(row=14,column=0,columnspan=2)
@@ -76,7 +97,13 @@ L11.grid(row=14,column=0,columnspan=2)
 E6=Entry(root,font=("Claibri",14,"normal"),show="*")
 E6.grid(row=15,column=0,padx=10,pady=10,columnspan=2)
 
+cb5=Checkbutton(root,text="show/ hide password",font=("calibri",14,"bold"),variable=mypass2,command=showhidepass2)
+cb5.grid(row=15,column=1)
+
 B1=Button(root,text="sumbit",command=sumbit_data,font=("Claibri",14,"bold"),padx=5,pady=5)
 B1.grid(row=16,column=0,padx=10,pady=10,columnspan=2)
 
 root.mainloop()
+
+
+
